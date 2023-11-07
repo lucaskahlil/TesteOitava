@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Container, Title, HomePage } from "./style";
 import { TarefaPayload } from "../utils/types/request";
 import CardTarefa from "../components/CardTarefa/CardTarefa";
+import AddTarefa from "../components/AddTarefa/AddTarefa";
 
 export default function Home() {
   const [list, setList] = useState<TarefaPayload[]>([
@@ -15,6 +16,9 @@ export default function Home() {
     <HomePage>
       <Container>
         <Title>Lista de Tarefas</Title>
+
+        <AddTarefa />
+
         {list.map((tarefa, index)=> (
             <CardTarefa key={index} tarefa={tarefa}/>
         ))}
