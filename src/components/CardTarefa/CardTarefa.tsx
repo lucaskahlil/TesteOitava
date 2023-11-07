@@ -8,7 +8,7 @@ interface CardTarefaProps {
 }
 
 export default function CardTarefa({ tarefa }: CardTarefaProps) {
-  const [isCheck, setIsCheck] = useState(tarefa.done);
+  const [isCheck, setIsCheck] = useState<boolean>(tarefa.done);
 
   return (
     <CardItem>

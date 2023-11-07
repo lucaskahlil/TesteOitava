@@ -25,7 +25,7 @@ export const CheckContainer = styled.div<CheckContainerProps>`
   label {
     display: flex;
     align-items: center;
-    text-decoration: ${({ done }) => done && 'text-decoration: line-through;'};
+    text-decoration: ${({ done }) => done ? 'line-through;' : 'initial'};
   }
 `;
 
