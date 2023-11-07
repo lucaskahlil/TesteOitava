@@ -12,8 +12,8 @@ export default function CardTarefa({ tarefa }: CardTarefaProps) {
 
   return (
     <CardItem>
-      <CheckContainer>
-        <input 
+      <CheckContainer done={isCheck}>
+        <input
           type="checkbox"
           checked={isCheck}
           onChange={(e) => setIsCheck(e.target.checked)}
