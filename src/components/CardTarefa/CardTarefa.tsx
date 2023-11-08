@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate, useParams } from 'react-router-dom';
 import { BtnEdit, CardItem, CheckContainer } from "./style";
 import { useState } from "react";
 import { TarefaPayload } from "../../utils/types/request";
@@ -8,6 +9,7 @@ interface CardTarefaProps {
 }
 
 export default function CardTarefa({ tarefa }: CardTarefaProps) {
+  const navigate = useNavigate()
   const [isCheck, setIsCheck] = useState<boolean>(tarefa.done);
 
   return (
@@ -20,7 +22,7 @@ export default function CardTarefa({ tarefa }: CardTarefaProps) {
         />
         <label>{tarefa.name}</label>
       </CheckContainer>
-      <BtnEdit>Editar</BtnEdit>
+      <BtnEdit onClick={() => navigate('/edit/' + tarefa.id)}>Editar</BtnEdit>
     </CardItem>
   );
 }

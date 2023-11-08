@@ -14,7 +14,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={< Home />} />
-        <Route path='/edit/' element={<EditTask />} />
+        <Route path='/edit/:id' element={<EditTask />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

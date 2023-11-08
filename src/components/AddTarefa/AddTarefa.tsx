@@ -1,7 +1,10 @@
 import React, { FormEvent } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { api } from '../../utils/api/api';
 
 export default function AddTarefa() {
+  const navigate = useNavigate()
+
   async function HandleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -10,6 +13,8 @@ export default function AddTarefa() {
     };
 
     const taskData = await api.postTask(newTask);
+
+    window.location.reload();
   }
 
   return (

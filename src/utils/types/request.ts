@@ -7,3 +7,12 @@ export type TarefaPayload = {
 export type CreateTarefa= {
     name: string
 }
+
+export type EditPayload = {
+    id: string
+    name: string
+}
+
+export type DeletePayload = {
+    id: string
+}

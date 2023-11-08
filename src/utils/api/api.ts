@@ -1,5 +1,5 @@
 import axios from "axios"
-import { CreateTarefa, TarefaPayload } from "../types/request";
+import { CreateTarefa, DeletePayload, EditPayload, TarefaPayload } from "../types/request";
 
 axios.defaults.baseURL = "https://api-todo-0j43.onrender.com";
 axios.defaults.headers.post["Content-Type"] = "application/json";
@@ -33,12 +33,11 @@ export const api = {
         }
     },
 
-    patchTask: async (data: TarefaPayload) => {
+    patchTask: async (data: EditPayload) => {
         try {
             const response = await axios.patch("/to-do/" + data.id, {
                 id: data.id,
                 name: data.name,
-                done: data.done
             });
             return response.data;
         } catch (error) {
@@ -46,9 +45,9 @@ export const api = {
         }
     },
 
-    deleteTask: async (id: string) => {
+    deleteTask: async (data: DeletePayload) => {
         try {
-            const response = await axios.delete("/to-do/" + id)
+            const response = await axios.delete("/to-do/" + data.id)
         } catch (error) {
             alert(error)
         }
