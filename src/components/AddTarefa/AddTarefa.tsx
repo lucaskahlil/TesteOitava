@@ -1,15 +1,16 @@
-import React, { FormEvent } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { api } from '../../utils/api/api';
+import React, { FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
+import { api } from "../../utils/api/api";
+import { ContainerAdd, FormAdd } from "./Style";
 
 export default function AddTarefa() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   async function HandleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     const newTask = {
-      name: e.currentTarget.nome.value
+      name: e.currentTarget.nome.value,
     };
 
     const taskData = await api.postTask(newTask);
@@ -18,16 +19,14 @@ export default function AddTarefa() {
   }
 
   return (
-    <div>
-      <form onSubmit={HandleSubmit}>
+    <ContainerAdd>
+      <FormAdd onSubmit={HandleSubmit}>
         <h1>Nova Tarefa</h1>
-        <input
-          type="text"
-          placeholder='Ex: Varrer a casa'
-          name='nome' 
-        />
-        <button type='submit'>Adicionar</button>
-      </form>
-    </div>
-  )
+        <div>
+          <input type="text" placeholder="Ex: Estudar programação" name="nome" />
+          <button type="submit">Adicionar</button>
+        </div>
+      </FormAdd>
+    </ContainerAdd>
+  );
 }

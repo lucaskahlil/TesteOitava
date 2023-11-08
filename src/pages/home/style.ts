@@ -15,6 +15,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     padding: 20px;
+    border-radius: 20px;
 `
 export const Title = styled.h1`
     margin: 0;
@@ -23,4 +24,11 @@ export const Title = styled.h1`
     text-align: center;
     border-bottom: 1px solid black;
     padding-bottom: 15px;
+`
+export const ContainerHome = styled.div`
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: black;
 `
