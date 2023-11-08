@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Task() {
+export default function EditTask() {
   return (
     <div>task</div>
   )
