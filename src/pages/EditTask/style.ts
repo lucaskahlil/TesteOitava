@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const EditContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background-color: black;
+  background-color: #006994;
   display: flex;
   justify-content: center;
 
   div {
-    background-color: bisque;
+    background-color: #FFF;
     max-height: 150px;
     width: 400px;
     display: flex;

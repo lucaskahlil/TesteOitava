@@ -5,11 +5,11 @@ export const HomePage = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: black;
+   
     padding-top: 30px;
 `
 export const Container = styled.div`
-    background-color: bisque;
+    background-color: #FFF;
     width: 800px;
     display: flex;
     flex-direction: column;
@@ -30,5 +30,5 @@ export const ContainerHome = styled.div`
     padding: 0;
     width: 100vw;
     min-height: 100vh;
-    background-color: black;
+    background-color: #006994;
 `
