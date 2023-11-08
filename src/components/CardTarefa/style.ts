@@ -33,4 +33,7 @@ export const BtnEdit = styled.button`
   margin-right: 20px;
   height: 20px;
   width: 60px;
+  border: none;
+  background-color: bisque;
+  cursor: pointer;
 `;

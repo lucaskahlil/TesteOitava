@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 import { BtnEdit, CardItem, CheckContainer } from "./style";
+import { BsPencil } from 'react-icons/bs'
 import { useState } from "react";
 import { TarefaPayload } from "../../utils/types/request";
 
@@ -22,7 +23,7 @@ export default function CardTarefa({ tarefa }: CardTarefaProps) {
         />
         <label>{tarefa.name}</label>
       </CheckContainer>
-      <BtnEdit onClick={() => navigate('/edit/' + tarefa.id)}>Editar</BtnEdit>
+      <BtnEdit onClick={() => navigate('/edit/' + tarefa.id)}><BsPencil/></BtnEdit>
     </CardItem>
   );
 }
