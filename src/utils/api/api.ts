@@ -1,14 +1,14 @@
 import axios from "axios"
 import { CreateTarefa, TarefaPayload } from "../types/request";
 
-axios.defaults.baseURL = "https://api-todo-0j43.onrender.com/to-do";
+axios.defaults.baseURL = "https://api-todo-0j43.onrender.com";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
 export const api = {
 
     postTask: async (data: CreateTarefa) => {
         try {
-            const response = await axios.post("/", data);
+            const response = await axios.post("/to-do", data);
             return response.data;
         } catch (error) {
             alert(error);
@@ -17,7 +17,7 @@ export const api = {
 
     getAllTask: async () => {
         try {
-            const response = await axios.get("/");
+            const response = await axios.get("/to-do");
             return response.data;
         } catch (error) {
             alert(error);
@@ -26,7 +26,7 @@ export const api = {
 
     getTaskById: async (data: TarefaPayload) => {
         try {
-            const response = await axios.get("/" + data.id);
+            const response = await axios.get("/to-do/" + data.id);
             return response.data;
         } catch (error) {
             alert(error);
@@ -35,7 +35,7 @@ export const api = {
 
     patchTask: async (data: TarefaPayload) => {
         try {
-            const response = await axios.patch("/" + data.id, {
+            const response = await axios.patch("/to-do/" + data.id, {
                 id: data.id,
                 name: data.name,
                 done: data.done
@@ -48,7 +48,7 @@ export const api = {
 
     deleteTask: async (id: string) => {
         try {
-            const response = await axios.delete("/" + id)
+            const response = await axios.delete("/to-do/" + id)
         } catch (error) {
             alert(error)
         }

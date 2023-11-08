@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Container, Title, HomePage } from "./style";
 import { TarefaPayload } from "../utils/types/request";
 import CardTarefa from "../components/CardTarefa/CardTarefa";
 import AddTarefa from "../components/AddTarefa/AddTarefa";
+import { api } from "../utils/api/api";
 
 export default function Home() {
-  const [list, setList] = useState<TarefaPayload[]>([
-    { id: "1", name: "Exemplo 1", done: false },
-    { id: "2", name: "Exemplo 2", done: false },
-    { id: "3", name: "Exemplo 3", done: false }
-  ]);
+  const [task, setTask] = useState<TarefaPayload[]>([]);
+
+  async function AllTask() {
+    const result = await api.getAllTask()
+    setTask(result)
+  }
+
+  useEffect(() => {
+    AllTask();
+  }, []);
 
   return (
     <HomePage>
@@ -19,7 +25,7 @@ export default function Home() {
 
         <Title>Lista de Tarefas</Title>
 
-        {list.map((tarefa, index) => (
+        {task.map((tarefa, index) => (
           <CardTarefa key={index} tarefa={tarefa} />
         ))}
       </Container>
