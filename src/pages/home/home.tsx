@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Container, Title, HomePage } from "./style";
-import { TarefaPayload } from "../utils/types/request";
-import CardTarefa from "../components/CardTarefa/CardTarefa";
-import AddTarefa from "../components/AddTarefa/AddTarefa";
-import { api } from "../utils/api/api";
+import { TarefaPayload } from "../../utils/types/request";
+import CardTarefa from "../../components/CardTarefa/CardTarefa";
+import AddTarefa from "../../components/AddTarefa/AddTarefa";
+import { api } from "../../utils/api/api";
 
 export default function Home() {
   const [task, setTask] = useState<TarefaPayload[]>([]);
